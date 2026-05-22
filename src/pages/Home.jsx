@@ -268,6 +268,31 @@ const Home = () => {
         </div>
 
       </div>
+      {/* Profile Card */}
+
+<div className="bg-black text-white rounded-3xl p-5 mt-8 shadow-xl">
+
+  <div className="flex items-center gap-4">
+
+    <div className="w-16 h-16 rounded-full bg-yellow-400 flex items-center justify-center text-black text-2xl font-bold">
+      R
+    </div>
+
+    <div>
+
+      <h2 className="text-xl font-bold">
+        Rido Premium
+      </h2>
+
+      <p className="text-gray-400">
+        Smart urban mobility experience
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
         {/* Bottom Navigation */}
 
 <div className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex justify-around py-4 shadow-[0_-5px_20px_rgba(0,0,0,0.05)]">
