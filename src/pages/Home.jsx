@@ -20,7 +20,7 @@ const Home = () => {
     Current Location
   </p>
 
-  <h1 className="text-2xl font-bold mt-1">
+<h1 className="text-xl sm:text-2xl font-bold mt-1">
     Chennai, India 📍
   </h1>
 
@@ -39,7 +39,7 @@ const Home = () => {
         <input
           type="text"
           placeholder="Where do you want to go?"
-          className="w-full outline-none text-lg placeholder:text-gray-400"
+         className="w-full outline-none text-base sm:text-lg placeholder:text-gray-400"
         />
 
       </div>
