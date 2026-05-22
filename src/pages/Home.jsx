@@ -7,7 +7,7 @@ const Home = () => {
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.5 }}
-  className="min-h-screen bg-[#f8f1d7] p-5"
+  className="min-h-screen bg-[#f8f1d7] p-5 pb-28"
 >
 
       {/* Header */}
@@ -15,16 +15,18 @@ const Home = () => {
       <div className="flex items-center justify-between">
 
         <div>
-          <h1 className="text-3xl font-bold">
-              Welcome Back👋
-          </h1>
 
-          <p className="text-gray-500">
-            Ready for your next ride?
-          </p>
-        </div>
+  <p className="text-gray-500 text-sm">
+    Current Location
+  </p>
 
-        <div className="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center text-xl font-bold">
+  <h1 className="text-2xl font-bold mt-1">
+    Chennai, India 📍
+  </h1>
+
+</div>
+
+        <div className="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center text-xl font-bold hover:scale-110 transition">
           L
         </div>
 
@@ -32,20 +34,22 @@ const Home = () => {
 
       {/* Search Box */}
 
-      <div className="bg-white rounded-3xl p-4 mt-6 shadow-sm">
+      <div className="bg-white rounded-3xl p-4 mt-6 shadow-lg border border-gray-100">
 
         <input
           type="text"
           placeholder="Where do you want to go?"
-          className="w-full outline-none text-lg"
+          className="w-full outline-none text-lg placeholder:text-gray-400"
         />
 
       </div>
 
       {/* AI Recommendation */}
 
-      <div className="bg-black text-white rounded-3xl p-5 mt-6">
-
+      <div className="bg-gradient-to-r from-black to-zinc-800 text-white rounded-3xl p-5 mt-6 shadow-xl">
+         <p className="text-yellow-400 text-sm mb-2">
+            SMART AI 
+         </p>    
         <h2 className="text-xl font-bold">
           AI Recommendation
         </h2>
@@ -66,7 +70,7 @@ const Home = () => {
 
         {/* Bike */}
 
-        <div className="bg-white rounded-3xl p-5 flex items-center justify-between shadow-sm hover:scale-105 transition">
+        <div className="bg-white rounded-3xl p-5 flex items-center justify-between shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300 cursor-pointer border border-gray-100">
 
           <div className="flex items-center gap-4">
 
@@ -79,9 +83,17 @@ const Home = () => {
                 Bike
               </h3>
 
-              <p className="text-gray-500">
-                2 mins away
-              </p>
+              <div className="flex items-center gap-2 mt-1">
+
+  <p className="text-gray-500 text-sm">
+    2 mins away
+  </p>
+
+  <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full">
+    Available
+  </span>
+
+</div>
             </div>
 
           </div>
@@ -94,7 +106,7 @@ const Home = () => {
 
         {/* Auto */}
 
-        <div className="bg-white rounded-3xl p-5 flex items-center justify-between shadow-sm hover:scale-105 transition">
+        <div className="bg-white rounded-3xl p-5 flex items-center justify-between shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300 cursor-pointer border border-gray-100">
 
           <div className="flex items-center gap-4">
 
@@ -107,9 +119,17 @@ const Home = () => {
                 Auto
               </h3>
 
-              <p className="text-gray-500">
-                4 mins away
-              </p>
+              <div className="flex items-center gap-2 mt-1">
+
+  <p className="text-gray-500 text-sm">
+    4 mins away
+  </p>
+
+  <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full">
+    Available
+  </span>
+
+</div>
             </div>
 
           </div>
@@ -122,11 +142,11 @@ const Home = () => {
 
         {/* Cab */}
 
-        <div className="bg-white rounded-3xl p-5 flex items-center justify-between shadow-sm hover:scale-105 transition">
+        <div className="bg-white rounded-3xl p-5 flex items-center justify-between shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300 cursor-pointer border border-gray-100">
 
           <div className="flex items-center gap-4">
 
-            <div className="bg-blue-100 p-4 rounded-2xl text-3xl">
+            <div className="bg-yellow-100 p-4 rounded-2xl text-3xl">
               <FaCarSide />
             </div>
 
@@ -135,9 +155,17 @@ const Home = () => {
                 Cab
               </h3>
 
-              <p className="text-gray-500">
-                6 mins away
-              </p>
+              <div className="flex items-center gap-2 mt-1">
+
+  <p className="text-gray-500 text-sm">
+    6 mins away
+  </p>
+
+  <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full">
+    Available
+  </span>
+
+</div>
             </div>
 
           </div>
@@ -151,7 +179,7 @@ const Home = () => {
       </div> 
       {/* Fare Estimator */}
 
-<div className="bg-white rounded-3xl p-5 mt-8 shadow-sm">
+<div className="bg-white rounded-3xl p-5 mt-8 shadow-lg border border-gray-100">
 
   <h2 className="text-xl font-bold">
     Estimated Fare
@@ -177,10 +205,36 @@ const Home = () => {
   </div>
 
 </div>
+    {/* Map Section */}
+
+<div className="mt-8">
+
+  <h2 className="text-2xl font-bold mb-4">
+    Nearby Drivers
+  </h2>
+
+  <div className="bg-gradient-to-r from-zinc-800 to-black rounded-3xl h-[180px] flex items-center justify-center text-white shadow-xl">
+
+    <div className="text-center">
+
+      <h3 className="text-2xl font-bold">
+        Live Map Preview
+      </h3>
+
+      <p className="text-gray-300 mt-2">
+        12 drivers available nearby
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
 
       {/* Nearby Section */}
 
-      <div className="bg-white rounded-3xl p-5 mt-8 shadow-sm">
+      <div className="bg-white rounded-3xl p-5 mt-8 shadow-lg border border-gray-100">
 
         <h2 className="text-xl font-bold">
           Nearby Hotspots
@@ -205,7 +259,7 @@ const Home = () => {
       </div>
         {/* Bottom Navigation */}
 
-<div className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex justify-around py-4">
+<div className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex justify-around py-4 shadow-[0_-5px_20px_rgba(0,0,0,0.05)]">
 
   <button className="flex flex-col items-center text-yellow-500 font-semibold">
     Home

@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
+
+  const handleContinue = () => {
+    navigate("/otp");
+  };
+
   return (
     <div className="min-h-screen bg-black text-white flex items-center justify-center px-6">
       
@@ -26,10 +33,11 @@ function Login() {
         />
 
         <button
-         className="w-full bg-blue-400 mt-6 py-3 rounded-full font-semibold text-white hover:bg-blue-500 transition"
-        >
-          Continue
-        </button>
+  onClick={() => navigate("/otp")}
+  className="w-full bg-yellow-400 mt-6 py-3 rounded-full font-semibold text-white hover:bg-blue-500 transition"
+>
+  Continue
+</button>
 
       </motion.div>
 
