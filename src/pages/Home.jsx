@@ -1,10 +1,13 @@
 import { FaMotorcycle, FaCarSide } from "react-icons/fa";
 import { MdElectricRickshaw } from "react-icons/md";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 const Home = () => {
-    const bikePrice = Math.floor(Math.random() * 50) + 40;
-  const autoPrice = Math.floor(Math.random() * 80) + 80;
-  const cabPrice = Math.floor(Math.random() * 120) + 140;
+  const navigate = useNavigate();
+  const [bikePrice, setBikePrice] = useState(Math.floor(Math.random() * 50) + 40);
+  const [autoPrice, setAutoPrice] = useState(Math.floor(Math.random() * 80) + 80);
+  const [cabPrice, setCabPrice] = useState(Math.floor(Math.random() * 120) + 140);
   return (
     <motion.div
   initial={{ opacity: 0, y: 20 }}
@@ -74,8 +77,12 @@ const Home = () => {
     />
 
     <button className="bg-black text-white py-4 rounded-2xl font-semibold hover:scale-105 transition">
-      Search Rides
-    </button>
+
+  {selectedRide
+    ? `${selectedRide} Available`
+    : "Search Rides"}
+
+</button>
 
   </div>
 
@@ -107,7 +114,14 @@ const Home = () => {
 
         {/* Bike */}
 
-        <div className="bg-white rounded-3xl p-5 flex items-center justify-between shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300 cursor-pointer border border-gray-100">
+        <div
+  onClick={() => setSelectedRide("Bike")}
+  className={`bg-white rounded-3xl p-5 flex items-center justify-between shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300 cursor-pointer border ${
+    selectedRide === "Bike"
+      ? "border-yellow-500 ring-2 ring-yellow-300"
+      : "border-gray-100"
+  }`}
+>
 
           <div className="flex items-center gap-4">
 
@@ -143,7 +157,14 @@ const Home = () => {
 
         {/* Auto */}
 
-        <div className="bg-white rounded-3xl p-5 flex items-center justify-between shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300 cursor-pointer border border-gray-100">
+       <div
+  onClick={() => setSelectedRide("Auto")}
+  className={`bg-white rounded-3xl p-5 flex items-center justify-between shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300 cursor-pointer border ${
+    selectedRide === "Auto"
+      ? "border-green-500 ring-2 ring-green-300"
+      : "border-gray-100"
+  }`}
+>
 
           <div className="flex items-center gap-4">
 
@@ -179,7 +200,14 @@ const Home = () => {
 
         {/* Cab */}
 
-        <div className="bg-white rounded-3xl p-5 flex items-center justify-between shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300 cursor-pointer border border-gray-100">
+        <div
+  onClick={() => setSelectedRide("Cab")}
+  className={`bg-white rounded-3xl p-5 flex items-center justify-between shadow-lg hover:scale-105 hover:-translate-y-1 transition duration-300 cursor-pointer border ${
+    selectedRide === "Cab"
+      ? "border-blue-500 ring-2 ring-blue-300"
+      : "border-gray-100"
+  }`}
+>
 
           <div className="flex items-center gap-4">
 
@@ -332,23 +360,35 @@ const Home = () => {
   </p>
 
 </div>
-        {/* Bottom Navigation */}
+  {/* Bottom Navigation */}
 
 <div className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex justify-around py-4 shadow-[0_-5px_20px_rgba(0,0,0,0.05)]">
 
-  <button className="flex flex-col items-center text-yellow-500 font-semibold">
+  <button
+    onClick={() => navigate("/home")}
+    className="flex flex-col items-center text-yellow-500 font-semibold"
+  >
     Home
   </button>
 
-  <button className="flex flex-col items-center text-gray-500">
+  <button
+    onClick={() => navigate("/activity")}
+    className="flex flex-col items-center text-gray-500"
+  >
     Activity
   </button>
 
-  <button className="flex flex-col items-center text-gray-500">
+  <button
+    onClick={() => navigate("/wallet")}
+    className="flex flex-col items-center text-gray-500"
+  >
     Wallet
   </button>
 
-  <button className="flex flex-col items-center text-gray-500">
+  <button
+    onClick={() => navigate("/profile")}
+    className="flex flex-col items-center text-gray-500"
+  >
     Profile
   </button>
 
