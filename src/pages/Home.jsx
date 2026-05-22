@@ -1,9 +1,14 @@
 import { FaMotorcycle, FaCarSide } from "react-icons/fa";
 import { MdElectricRickshaw } from "react-icons/md";
-
+import { motion } from "framer-motion";
 const Home = () => {
   return (
-    <div className="min-h-screen bg-[#f8f1d7] p-5">
+    <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+  className="min-h-screen bg-[#f8f1d7] p-5"
+>
 
       {/* Header */}
 
@@ -143,7 +148,35 @@ const Home = () => {
 
         </div>
 
-      </div>
+      </div> 
+      {/* Fare Estimator */}
+
+<div className="bg-white rounded-3xl p-5 mt-8 shadow-sm">
+
+  <h2 className="text-xl font-bold">
+    Estimated Fare
+  </h2>
+
+  <div className="grid grid-cols-3 gap-3 mt-4">
+
+    <div className="bg-yellow-100 rounded-2xl p-4 text-center">
+      <p className="font-semibold">Bike</p>
+      <h3 className="text-xl font-bold">₹49</h3>
+    </div>
+
+    <div className="bg-green-100 rounded-2xl p-4 text-center">
+      <p className="font-semibold">Auto</p>
+      <h3 className="text-xl font-bold">₹89</h3>
+    </div>
+
+    <div className="bg-blue-100 rounded-2xl p-4 text-center">
+      <p className="font-semibold">Cab</p>
+      <h3 className="text-xl font-bold">₹149</h3>
+    </div>
+
+  </div>
+
+</div>
 
       {/* Nearby Section */}
 
@@ -170,8 +203,28 @@ const Home = () => {
         </div>
 
       </div>
+        {/* Bottom Navigation */}
 
-    </div>
+<div className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex justify-around py-4">
+
+  <button className="flex flex-col items-center text-yellow-500 font-semibold">
+    Home
+  </button>
+
+  <button className="flex flex-col items-center text-gray-500">
+    Activity
+  </button>
+
+  <button className="flex flex-col items-center text-gray-500">
+    Wallet
+  </button>
+
+  <button className="flex flex-col items-center text-gray-500">
+    Profile
+  </button>
+
+</div>
+    </motion.div>
   )
 }
 
