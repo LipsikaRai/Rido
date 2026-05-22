@@ -43,6 +43,17 @@ const Home = () => {
         />
 
       </div>
+      <div className="flex justify-between items-center mt-4">
+
+  <p className="font-medium">
+    Premium Mode
+  </p>
+
+  <div className="w-14 h-8 bg-black rounded-full flex items-center px-1">
+    <div className="w-6 h-6 bg-white rounded-full"></div>
+  </div>
+
+</div>
 
       {/* AI Recommendation */}
 
