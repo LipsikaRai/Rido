@@ -2,6 +2,9 @@ import { FaMotorcycle, FaCarSide } from "react-icons/fa";
 import { MdElectricRickshaw } from "react-icons/md";
 import { motion } from "framer-motion";
 const Home = () => {
+    const bikePrice = Math.floor(Math.random() * 50) + 40;
+  const autoPrice = Math.floor(Math.random() * 80) + 80;
+  const cabPrice = Math.floor(Math.random() * 120) + 140;
   return (
     <motion.div
   initial={{ opacity: 0, y: 20 }}
@@ -32,25 +35,48 @@ const Home = () => {
 
       </div>
 
-      {/* Search Box */}
+  {/* Booking Section */}
 
-      <div className="bg-white rounded-3xl p-4 mt-6 shadow-lg border border-gray-100">
+<div className="bg-white rounded-3xl p-5 mt-6 shadow-lg border border-gray-100">
 
-        <input
-          type="text"
-          placeholder="Where do you want to go?"
-         className="w-full outline-none text-base sm:text-lg placeholder:text-gray-400"
-        />
+  <div className="flex justify-between items-center mb-5">
 
+    <h2 className="text-2xl font-bold">
+      Book a Ride
+    </h2>
+
+    <div className="flex items-center gap-2">
+
+      <p className="text-sm font-medium">
+        Premium
+      </p>
+
+      <div className="w-14 h-8 bg-black rounded-full flex items-center px-1">
+        <div className="w-6 h-6 bg-white rounded-full"></div>
       </div>
-      <div className="flex justify-between items-center mt-4">
 
-  <p className="font-medium">
-    Premium Mode
-  </p>
+    </div>
 
-  <div className="w-14 h-8 bg-black rounded-full flex items-center px-1">
-    <div className="w-6 h-6 bg-white rounded-full"></div>
+  </div>
+
+  <div className="flex flex-col gap-4">
+
+    <input
+      type="text"
+      placeholder="Pickup Location"
+      className="w-full bg-gray-100 rounded-2xl p-4 outline-none"
+    />
+
+    <input
+      type="text"
+      placeholder="Enter Destination"
+      className="w-full bg-gray-100 rounded-2xl p-4 outline-none"
+    />
+
+    <button className="bg-black text-white py-4 rounded-2xl font-semibold hover:scale-105 transition">
+      Search Rides
+    </button>
+
   </div>
 
 </div>
@@ -66,7 +92,7 @@ const Home = () => {
         </h2>
 
         <p className="text-gray-300 mt-2">
-          Bike recommended 🚴 due to moderate traffic.
+          Fastest ride available nearby. Bike saves approximately 8 minutes in current traffic.
         </p>
 
       </div>
@@ -97,7 +123,7 @@ const Home = () => {
               <div className="flex items-center gap-2 mt-1">
 
   <p className="text-gray-500 text-sm">
-    2 mins away
+    2.1 kms away
   </p>
 
   <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full">
@@ -110,7 +136,7 @@ const Home = () => {
           </div>
 
           <h2 className="text-xl font-bold">
-            ₹49
+          ₹{bikePrice}
           </h2>
 
         </div>
@@ -133,7 +159,7 @@ const Home = () => {
               <div className="flex items-center gap-2 mt-1">
 
   <p className="text-gray-500 text-sm">
-    4 mins away
+    4.4 kms away
   </p>
 
   <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full">
@@ -146,7 +172,7 @@ const Home = () => {
           </div>
 
           <h2 className="text-xl font-bold">
-            ₹89
+            ₹{autoPrice}
           </h2>
 
         </div>
@@ -169,7 +195,7 @@ const Home = () => {
               <div className="flex items-center gap-2 mt-1">
 
   <p className="text-gray-500 text-sm">
-    6 mins away
+    6 kms away
   </p>
 
   <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full">
@@ -182,7 +208,7 @@ const Home = () => {
           </div>
 
           <h2 className="text-xl font-bold">
-            ₹149
+            ₹{cabPrice}
           </h2>
 
         </div>
@@ -291,6 +317,19 @@ const Home = () => {
     </div>
 
   </div>
+
+</div>
+{/* Ride Summary */}
+
+<div className="bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-3xl p-5 mt-8 shadow-xl">
+
+  <h2 className="text-2xl font-bold">
+    Estimated Arrival
+  </h2>
+
+  <p className="mt-2 text-gray-800">
+    Driver can reach your pickup point within 3-5 minutes.
+  </p>
 
 </div>
         {/* Bottom Navigation */}
