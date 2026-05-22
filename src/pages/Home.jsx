@@ -196,7 +196,7 @@ const Home = () => {
     Estimated Fare
   </h2>
 
-  <div className="grid grid-cols-3 gap-3 mt-4">
+  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
 
     <div className="bg-yellow-100 rounded-2xl p-4 text-center">
       <p className="font-semibold">Bike</p>
