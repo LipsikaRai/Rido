@@ -5,9 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 const Home = () => {
   const navigate = useNavigate();
-  const [bikePrice, setBikePrice] = useState(Math.floor(Math.random() * 50) + 40);
-  const [autoPrice, setAutoPrice] = useState(Math.floor(Math.random() * 80) + 80);
-  const [cabPrice, setCabPrice] = useState(Math.floor(Math.random() * 120) + 140);
+   const [selectedRide, setSelectedRide] = useState("");
+const bikePrice = Math.floor(Math.random() * 50) + 40;
+const autoPrice = Math.floor(Math.random() * 80) + 80;
+const cabPrice = Math.floor(Math.random() * 120) + 140;
   return (
     <motion.div
   initial={{ opacity: 0, y: 20 }}
